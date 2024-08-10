@@ -58,4 +58,13 @@ class CalculatorViewModelTest {
         val expectedAnswer = 11.0
         assertEquals(expectedAnswer, actualAnswer)
     }
+
+    @Test
+    fun complexMath3() {
+        val testData = "5 9 1 - /"
+        val sut = CalculatorViewModel()
+        val actualAnswer = sut.calculate(expr = testData)
+        val expectedAnswer = 0.625
+        assertEquals(expectedAnswer, actualAnswer)
+    }
 }
