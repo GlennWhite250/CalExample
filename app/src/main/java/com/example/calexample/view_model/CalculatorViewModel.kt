@@ -37,7 +37,7 @@ class CalculatorViewModel : ViewModel() {
                     return
                 }
 
-                "+", "/", "*" -> {
+                "+", "/", "*", "^" -> {
                     if (it.isNotEmpty()) {
                         state = state.copy(
                             equationText = "$it $btn"
@@ -72,7 +72,7 @@ class CalculatorViewModel : ViewModel() {
             val d = token.toDoubleOrNull()
             if (d != null) {
                 stack.add(d)
-            } else if ((token.length > 1) || (token !in "+-*/")) {
+            } else if ((token.length > 1) || (token !in "+-*/^")) {
                 throw IllegalArgumentException("$token is not a valid token")
             } else if (stack.size < 2) {
                 throw IllegalArgumentException("Stack contains too few operands")
@@ -85,7 +85,7 @@ class CalculatorViewModel : ViewModel() {
                         "-"  -> d2 - d1
                         "*"  -> d2 * d1
                         "/"  -> d2 / d1
-                        else -> d1.pow(d2)
+                        else -> d2.pow(d1)
 
                     }
                 )

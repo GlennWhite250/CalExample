@@ -16,15 +16,20 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.BaselineShift
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.calexample.view_model.CalculatorViewModel
 
+
 val buttonList = listOf(
-    "C", "Enter", "", "/",
+    "C", "Enter", "^", "/",
     "7", "8", "9", "*",
     "4", "5", "6", "+",
     "1", "2", "3", "-",

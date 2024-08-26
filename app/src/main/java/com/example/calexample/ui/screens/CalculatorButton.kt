@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 fun getColor(btn: String): Color {
     if (btn == "Enter" || btn == "AC" || btn == "C")
         return MaterialTheme.colorScheme.secondary
-    if (btn == "/" || btn == "*" || btn == "+" || btn == "-" || btn == "=")
+    if (btn == "/" || btn == "*" || btn == "+" || btn == "-" || btn == "=" || btn == "^")
         return MaterialTheme.colorScheme.primary
     return Color.Black
 }
